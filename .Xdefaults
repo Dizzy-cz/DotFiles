@@ -1,0 +1,5 @@
+# RXVT
+URxvt.font: xft:Terminus:size=12
+URxvt.scrollBar: false
+URxvt.background: black
+URxvt.foreground: white
