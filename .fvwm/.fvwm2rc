@@ -1,0 +1,198 @@
+#nastaveni parametru desktopu
+EdgeResistance 250 10 #podivat do manualu
+EdgeScroll 0 0	      #podivat do manualu
+ClickTime 750         #podivat do manualu
+IgnoreModifiers L25 # ignorace capslocu jako modifikatoru
+EwmhBaseStruts 0 0 0 48 # omezeni maximalizace oken kvuli taskbaru a pageru: EwmhBaseStruts vlevo vprvo nahore dole
+DeskTopSize 4x1
+
+#nstaveni globalnich barev
+Colorset 1 bg gray, hi gray, sh gray #colorset pro zakryti 3d prvku
+Colorset 2 fg black, bg gray
+Colorset 6 fg black, bg #ffffff, sh #aaaaaa, hi #aaaaaa #nstaveni barev menu
+Colorset 5 VGradient 128 2 #a1c0e6 50 #86abd9 50 #86abd9, fg white, sh #4b6e99, hi #4b6e99 #nastaveni barev aktivnich menu
+
+ImagePath="/usr/share/icons/hicolor/16x16/apps"
+
+#nastaveni stylu dekorace -- pozdeji zakomponovat do "style"
+Style *	MWMBorder, MWMButtons
+Style *	BorderWidth 5, HandleWidth 5
+Style * MiniIcon /usr/share/icons/kdeclassic/16x16/apps/kcmx.png
+Style * SloppyFocus, MouseFocusClickRaises
+
+Style * HilightBack #4b6e99, HilightFore white, 
+Style * Colorset 2, 
+
+#nastaveni barev oken -pozdeji
+TitleStyle   ActiveUp   VGradient 128 2 #4b6e99 70 #86abd9 10 #86abd9 -- flat
+TitleStyle   ActiveDown  VGradient 128 2  #4b6e99 70 #86abd9 10 #86abd9  -- flat
+TitleStyle  InActive -- flat
+TitleStyle LeftJustified
+
+
+
+#styly pro fvwm*
+Style Fvwm* NoTitle,  Sticky, WindowListSkip, StaysOnTop, !Borders,  !Handles,  neverfocus
+Style * NoIcon
+Style * Font "xft:Bitstream Vera Sans Mono:style=Roman:size=10"
+
+Style FvwmButtons BorderWidth 2, Borders
+
+#styly pro menu 
+MenuStyle * BorderWidth 1, TrianglesSolid, Animation 
+MenuStyle * MenuColorset 6, HilightBack, ActiveColorset 5                       
+MenuStyle *  PopupOffset -2 100, TitleUnderlines1, Hilight3DThickness
+MenuStyle * ItemFormat "%.2|%.5i%.5l%.5i%2.3>%2|"
+MenuStyle * Font "xft:Bitstream Vera Sans Mono:style=Roman:size=10"
+
+
+
+
+#-styly jednotlyvych fvwm modulu
+#--styly pro FvwmPager
+DestroyModuleConfig FvwmPager: *
+*FvwmPager: Font none		#zrusi napis "desktop 0"
+*FvwmPager: MiniIcons		#pouzivani miniicon
+*FvwmPager: SolidSeparators
+*FvwmPager: Balloons null
+ 	
+#
+*FvwmAnimate: Twist 50
+*FvwmAnimate: Effect Flip
+
+#--styly pro FvwmButtons
+DestroyModuleConfig FvwmButtons: *
+*FvwmButtons: Colorset 1
+*FvwmButtons: Geometry 1020x47-0-0 #rozmery a pozice 
+*FvwmButtons: (Frame 2, Padding 0 0, Container (Rows 1 Columns 15 Frame 0 Padding 1 1 ))
+*FvwmButtons: (13x1, Frame 0, Swallow "FvwmIconMan" "Module FvwmIconMan")
+*FvwmButtons: (1x1, Frame 0, Swallow "stalonetray"  `Exec exec stalonetray` )
+*FvwmButtons: (4x1, Frame 2, Swallow "FvwmPager" "Module FvwmPager")
+*FvwmButtons: (1x1 Frame 2, Swallow (Respawn) "xclock" `Exec exec xclock -norender -font 6x9  -digital -padding 4 -bg gray -brief -hl black`)
+*FvwmButtons: (End)
+
+                           
+#--styly pro FvwmIconMan
+DestroyModuleConfig FvwmIconMan: *                                                     
+*FvwmIconMan: NumManagers 1                                                            
+*FvwmIconMan: Resolution  page                                                                             
+*FvwmIconMan: Font        "xft:Terminus:Bold:size=12:encoding=iso10646-1"                                           
+*FvwmIconMan: Format      "%t"                                                         
+#vyresit bindovani
+*FvwmIconMan: Action      Mouse   1 N sendcommand Focus, sendcommand "Iconify"         
+*FvwmIconMan: Action      Mouse   2 N sendcommand "Iconify 1"                          
+*FvwmIconMan: Action      Mouse   3 N sendcommand "FvwmIdent"                          
+#vyresit bindovani 
+*FvwmIconMan: FollowFocus true                                                         
+*FvwmIconMan: Sort        none                                                         
+#*FvwmIconMan: IconButton          up black maroon                                      
+#*FvwmIconMan: PlainButton          up black bisque3                                    
+#*FvwmIconMan: SelectButton         down black bisque3                                  
+#*FvwmIconMan: FocusButton          up yellow firebrick                                 
+#*FvwmIconMan: FocusAndSelectButton down yellow firebrick                               
+*FvwmIconMan: DontShow icon=Untitled resource=Untitled                                 
+*FvwmIconMan: DrawIcons true                                                          
+#*FvwmIconMan: ButtonGeometry  150x0                                                    
+*FvwmIconMan: ManagerGeometry 1x2                                                      
+*FvwmIconMan: MaxButtonWidth 150
+*FvwmIconMan: Title ""
+*FvwmIconMan: DrawIcons always
+*FvwmIconMan: ReliefThickness 1
+
+
+
+
+#nastaveni buttonu na title oken
+ButtonStyle 1 MiniIcon -- UseTitleStyle flat
+ButtonStyle 2 - Clear   
+ButtonStyle 2 17 20x20@1 30x20@1 50x40@1 70x20@1 80x20@1 80x30@0 60x50@0 80x70@1 80x80@0 70x80@0 50x60@0 30x80@0 20x80@0 20x70@0 40x50@1 20x30@0 20x20@1 -- flat 
+ButtonStyle 3 4 50x65@1 35x35@1 65x35@1 50x65@0 -- flat
+ButtonStyle 4 8 40x80@1 40x50@1 20x50@1 50x20@1 80x50@0 60x50@0 60x80@0 40x80@0 -- flat 
+ButtonStyle 6 8 40x20@1 40x50@1 20x50@1 50x80@1 80x50@0 60x50@0 60x20@0 40x20@1 -- flat
+ButtonStyle  All -- UseTitleStyle
+
+
+
+
+#inicializace modulu, pro poradek dat na zacatek
+DestroyFunc StartFunction
+AddToFunc StartFunction
++ I Exec exec fvwm-root /home/dizz/wallpaper.png
++ I Module FvwmAnimate
++ I Module FvwmButtons
+
+
+# some simple default mouse bindings: 
+#   for the root window: 
+Mouse 1 R       A       Menu MenuFvwmRoot Nop 
+Mouse 2 R       A       Menu MenuFvwmWindowOps Nop 
+Mouse 3 R       A       WindowList 
+ 
+#   for the title bar buttons: 
+Mouse 0 1       A       Menu MenuFvwmWindowOps2 Close 
+Mouse 0 2       A       Close
+MOuse 0 3       A       Stick 
+Mouse 0 4       A       FuncFvwmMaximize 
+Mouse 0 6	A       Iconify
+ 
+
+
+
+
+#revidovat 
+#   for other parts of the window/borders/icons: 
+Mouse 1 F       A       FuncFvwmResizeOrRaise 
+Mouse 1 TS      A       FuncFvwmMoveOrRaise 
+Mouse 1 I       A       FuncFvwmMoveOrIconify 
+Mouse 2 I       A       Iconify 
+Mouse 2 FST     A       Menu MenuFvwmWindowOps2 Nop 
+Mouse 3 TSIF    A       RaiseLower
+
+
+DestroyFunc FuncFvwmMoveOrRaise
+AddToFunc FuncFvwmMoveOrRaise
++ I Raise
++ M Move
++ D WindowShade Toggle
+
+
+DestroyFunc FuncFvwmMaximize
+AddToFunc FuncFvwmMaximize
++ C Maximize 100 100
+
+DestroyFunc FuncFvwmMoveOrIconify
+AddToFunc FuncFvwmMoveOrIconify
++ I Raise
++ M Move
++ D Iconify
+
+DestroyFunc FuncFvwmResizeOrRaise
+AddToFunc FuncFvwmResizeOrRaise
++ I Raise
++ M Resize
+
+
+
+#konfigurace menu 
+DestroyMenu MenuFvwmRoot
+AddToMenu MenuFvwmRoot   
++			"Root Menu"     Title                                     
++                       "%max.png%XTerm"         Exec exec xterm -bg black -fg white       
++                       "Rxvt"          Exec exec urxvt +sb -bg black -fg white
++			%/usr/share/icons/hicolor/16x16/apps/iceweasel.png%"Iceweasel"	Exec exec iceweasel
++			%/usr/share/icons/hicolor/16x16/apps/psi.png%"Psi"		Exec exec psi
++			%/usr/share/icons/hicolor/16x16/apps/vim.png%"Gvim"		Exec exec gvim
++			%/usr/share/icons/hicolor/16x16/apps/opera.png%"Opera"		Exec exec opera 
++			"gqview"	Exec exec gqview       
++                      ""              Nop                                                                 
++                       "Refresh Screen"   Refresh                                
++                       "Recapture Screen" Recapture                              
++                       ""              Nop                                       
++                       %/usr/share/icons/gnome/16x16/actions/exit.png%"Exit Fvwm"     Popup Quit-Verify                
+
+AddToMenu Quit-Verify   "Really Quit Fvwm?" Title                                 
++                       "Yes, Really Quit"  Quit                                  
++                       "Restart Fvwm"      Restart                                                          
++                       "Start dummy"       Restart xterm                         
++                       "Restart"           Exec exec /sbin/shutdown -r now       
++                       "No, Don't Quit"    Nop                      
