@@ -41,7 +41,7 @@ parse_git_branch() {
 }
 
 # Set color prompt
-PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$(parse_git_branch)\[\033[00m\]$"
+PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\$(parse_git_branch)\[\033[00m\] $"
 
 
 # If this is an xterm set the title to user@host:dir
@@ -73,6 +73,7 @@ fi
 #alias la='ls -A'
 #alias l='ls -CF'
 alias xterm='rxvt'
+alias top='htop'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
