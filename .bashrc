@@ -72,7 +72,8 @@ fi
 #alias ll='ls -l'
 #alias la='ls -A'
 #alias l='ls -CF'
-alias xterm='rxvt'
+alias xterm='urxvt'
+alias rxvt='urxvt'
 alias top='htop'
 
 # Alias definitions.
