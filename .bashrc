@@ -41,7 +41,7 @@ parse_git_branch() {
 }
 
 # Set color prompt
-PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\$(parse_git_branch)\[\033[00m\] $"
+PS1="\[\033[01;32m\][\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[01;33m\]\$(parse_git_branch)\[\033[01;32m\]]\[\033[00m\]$ "
 
 
 # If this is an xterm set the title to user@host:dir
