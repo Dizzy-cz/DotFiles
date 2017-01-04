@@ -75,6 +75,7 @@ fi
 alias xterm='urxvt'
 alias rxvt='urxvt'
 alias top='htop'
+alias mc='EDITOR=emacs mc'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -95,3 +96,29 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+#Work
+make_package_and_submit ()
+{
+         git pull --rebase
+         if [[ $? -ne 0 ]]; then
+                   echo "Problem with git pull --rebase"
+         fi
+         git push
+         if [[ $? -ne 0 ]]; then
+                  echo "Problem with git push"
+         fi
+         make tag
+         if [[ $? -ne 0 ]]; then
+         echo "Problem with make tag"
+         fi
+         git push --tags
+         if [[ $? -ne 0 ]]; then
+                  echo "Problem with git push --tags"
+         fi
+         make bkradd;
+         if [[ $? -ne 0 ]]; then
+                  echo "Problem with make bkradd"
+         fi
+}
+

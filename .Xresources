@@ -1,0 +1,14 @@
+!RXVT
+URxvt.font: xft:Terminus:size=12
+URxvt.scrollBar: false
+URxvt.background: #191c1d
+URxvt.foreground: white
+
+!!Blue
+*color12: #3060a9
+
+!!Green
+*color10: #10a210
+
+!!Red
+*color9: #bd1313

@@ -4,6 +4,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(show-paren-mode t)
+ '(setq-default tab-width 4)
  '(column-number-mode t)
  '(custom-enabled-themes (quote (tango-dark)))
  '(inhibit-startup-screen t)
