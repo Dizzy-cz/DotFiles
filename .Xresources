@@ -1,5 +1,5 @@
 !RXVT
-URxvt.font: xft:Terminus:size=12
+URxvt.font: xft:Terminus:size=14
 URxvt.scrollBar: false
 URxvt.background: #191c1d
 URxvt.foreground: white
@@ -8,7 +8,7 @@ URxvt.foreground: white
 *color12: #3060a9
 
 !!Green
-*color10: #10a210
+*color10: #73d216
 
 !!Red
 *color9: #bd1313
